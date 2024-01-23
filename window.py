@@ -3,6 +3,7 @@ from draw import Line
 
 class Window():
     def __init__(self, width, height):
+        print("Creating Window...")
         self.__root = Tk()
         self.__root.title("Python Maze Solver")
         self.__canvas = Canvas(self.__root, bg="white", height=height, width=width)
@@ -15,13 +16,16 @@ class Window():
         self.__root.update()
 
     def wait_for_close(self):
+        print("Drawing Window...")
         self.running = True
         while self.running:
             self.redraw()
 
     def close(self):
+        print("Closing Window...")
         self.running = False
 
     def draw_line(self, line, fill_color):
+        print("Drawing line to Window...")
         line.draw(self.__canvas, fill_color)
 
